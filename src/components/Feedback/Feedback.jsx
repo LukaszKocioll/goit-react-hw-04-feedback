@@ -1,6 +1,5 @@
-import css from './feedback.module.css';
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class App extends Component {
   state = {
@@ -62,6 +61,11 @@ const Section = ({ title, children }) => (
   </div>
 );
 
+Section.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
+
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
   <div>
     <p>Good: {good}</p>
@@ -74,8 +78,20 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
   </div>
 );
 
+Statistics.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
+};
+
 const Notification = ({ message }) => (
   <p>{message}</p>
 );
+
+Notification.propTypes = {
+  message: PropTypes.string.isRequired,
+};
 
 export default App;
