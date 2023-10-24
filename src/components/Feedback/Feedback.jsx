@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Notification } from './FeedbackNotification';
 import { Section } from './FeedbackSection'
 import { Statistics } from "./FeedbackStatistics";
